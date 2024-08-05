@@ -18,7 +18,7 @@ async function sendFormData(token, password, confirmPassword) {
 
     try {
         const response = await fetch(
-            "http://4.240.96.78:5064/api/employee/reset-password/" + token, {
+            "https://capstone-backend.azurewebsites.net/api/employee/reset-password/" + token, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

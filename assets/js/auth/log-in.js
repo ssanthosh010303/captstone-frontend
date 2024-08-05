@@ -5,7 +5,7 @@
 async function sendFormData(username, password) {
     try {
         const response = await fetch(
-            "http://4.240.96.78:5064/api/jwt", {
+            "https://capstone-backend.azurewebsites.net/api/jwt", {
             method: "GET",
             headers: generateHeaderBasicAuth(username, password)
         }

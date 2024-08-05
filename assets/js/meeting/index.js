@@ -16,7 +16,7 @@ let grievances;
 
 async function getGrievances() {
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/meeting?userid=" + getId(), {
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/meeting?userid=" + getId(), {
             method: "GET",
             headers: generateHeaderJwt(),
         });

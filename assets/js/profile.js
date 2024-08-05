@@ -6,7 +6,7 @@ var userId = null;
 
 async function getUserDetails() {
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/employee/profile", {
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/employee/profile", {
             method: "GET",
             headers: generateHeaderJwt()
         });
@@ -28,7 +28,7 @@ async function getUserDetails() {
 
 async function sendGeneralFormData(formData) {
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/employee/" + userId, {
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/employee/" + userId, {
             method: "PUT",
             headers: generateHeaderJwt(),
             body: JSON.stringify(formData)
@@ -50,7 +50,7 @@ async function sendGeneralFormData(formData) {
 
 async function sendEmailFormData(email) {
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/employee/update-email", {
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/employee/update-email", {
             method: "POST",
             headers: generateHeaderJwt(),
             body: JSON.stringify({ "email": email })
@@ -70,7 +70,7 @@ async function sendEmailFormData(email) {
 
 async function sendPasswordFormData(oldPassword, newPassword) {
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/employee/set-password", {
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/employee/set-password", {
             method: "POST",
             headers: generateHeaderJwt(),
             body: JSON.stringify({

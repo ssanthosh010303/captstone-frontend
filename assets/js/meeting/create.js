@@ -1,6 +1,6 @@
 async function loadGrievances() {
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/grievance?isassignee=1", {
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/grievance?isassignee=1", {
             metod: "POST",
             headers: generateHeaderJwt()
         });
@@ -23,7 +23,7 @@ async function loadGrievances() {
 
 async function loadAttendees() {
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/employee");
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/employee");
 
         return await response.json();
     } catch (error) {
@@ -73,7 +73,7 @@ async function sendFormData(formData) {
     console.log(body);
 
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/meeting", {
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/meeting", {
             method: "POST",
             headers: generateHeaderJwt(),
             body: JSON.stringify(body)

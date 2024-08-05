@@ -4,7 +4,7 @@
  */
 async function loadGrievancePriority() {
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/grievance-priority");
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/grievance-priority");
 
         return await response.json();
     } catch (error) {
@@ -15,7 +15,7 @@ async function loadGrievancePriority() {
 
 async function loadGrievanceCategory() {
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/grievance-category");
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/grievance-category");
 
         return await response.json();
     } catch (error) {
@@ -26,7 +26,7 @@ async function loadGrievanceCategory() {
 
 async function loadGrievanceSubcategory(id) {
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/grievance-subcategory?categoryid=" + id);
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/grievance-subcategory?categoryid=" + id);
 
         return await response.json();
     } catch (erorr) {
@@ -39,7 +39,7 @@ async function sendFormData(formData) {
     console.log(formData);
 
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/grievance", {
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/grievance", {
             method: "POST",
             headers: generateHeaderJwt(),
             body: JSON.stringify({

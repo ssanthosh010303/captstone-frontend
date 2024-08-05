@@ -17,7 +17,7 @@ const FA_ITEM = `<li class="list-group-item">
 let creatorId = -1;
 
 async function changeGrievanceStatusRequest(grievanceId, statusId) {
-    const response = await fetch(`http://4.240.96.78:5064/api/grievance/${grievanceId}/status?statusid=${statusId}`, {
+    const response = await fetch(`https://capstone-backend.azurewebsites.net/api/grievance/${grievanceId}/status?statusid=${statusId}`, {
         method: "GET",
         headers: generateHeaderJwt()
     });
@@ -31,7 +31,7 @@ async function changeGrievanceStatusRequest(grievanceId, statusId) {
 }
 
 async function getDownloadUrl(blobName) {
-    const response = await fetch(`http://4.240.96.78:5064/api/file-attachment/download-url?blobname=${blobName}`, {
+    const response = await fetch(`https://capstone-backend.azurewebsites.net/api/file-attachment/download-url?blobname=${blobName}`, {
         method: "POST",
         headers: generateHeaderJwt(),
         body: ""
@@ -55,7 +55,7 @@ async function openFile(blobName) {
 }
 
 async function getUploadUrls(grievanceId, fileExtensions) {
-    const response = await fetch("http://4.240.96.78:5064/api/file-attachment/upload-urls", {
+    const response = await fetch("https://capstone-backend.azurewebsites.net/api/file-attachment/upload-urls", {
         method: "POST",
         headers: generateHeaderJwt(),
         body: JSON.stringify({
@@ -102,7 +102,7 @@ async function acknowledgeUploadedFiles(files, uploadUrls, successList) {
         }
     }
 
-    const response = await fetch("http://4.240.96.78:5064/api/file-attachment", {
+    const response = await fetch("https://capstone-backend.azurewebsites.net/api/file-attachment", {
         method: "POST",
         headers: generateHeaderJwt(),
         body: JSON.stringify(body)
@@ -141,7 +141,7 @@ async function uploadFiles(grievanceId, files) {
 
 async function loadGrievanceDetails(id) {
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/grievance/" + id, {
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/grievance/" + id, {
             method: "GET",
             headers: generateHeaderJwt()
         });
@@ -170,7 +170,7 @@ async function loadGrievanceDetails(id) {
 async function loadGrievanceResponses(id, skip = 0, take = 10) {
     try {
         const response = await fetch(
-            "http://4.240.96.78:5064/api/grievance-response/?grievanceid="
+            "https://capstone-backend.azurewebsites.net/api/grievance-response/?grievanceid="
             + id + "&skip=" + skip + "&take=" + take, {
             method: "GET",
             headers: generateHeaderJwt()
@@ -186,7 +186,7 @@ async function loadGrievanceResponses(id, skip = 0, take = 10) {
 async function sendFormData(id, description) {
     try {
         const response = await fetch(
-            "http://4.240.96.78:5064/api/grievance-response", {
+            "https://capstone-backend.azurewebsites.net/api/grievance-response", {
             method: "POST",
             headers: generateHeaderJwt(),
             body: JSON.stringify({

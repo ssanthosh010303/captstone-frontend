@@ -18,7 +18,7 @@ async function verifyEmail() {
     }
 
     const response = await fetch(
-        "http://4.240.96.78:5064/api/employee/update-email/" + token
+        "https://capstone-backend.azurewebsites.net/api/employee/update-email/" + token
     );
     if (response.status == 204) {
         verificationStatusElement.textContent = "Verified!";

@@ -18,7 +18,7 @@ let grievances;
 
 async function getGrievances() {
     try {
-        const response = await fetch("http://4.240.96.78:5064/api/grievance?isassignee=" + (isAuthorized("Manager") ? 1 : 0), {
+        const response = await fetch("https://capstone-backend.azurewebsites.net/api/grievance?isassignee=" + (isAuthorized("Manager") ? 1 : 0), {
             method: "GET",
             headers: generateHeaderJwt(),
         });

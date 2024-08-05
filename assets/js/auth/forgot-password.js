@@ -5,11 +5,11 @@
 async function sendFormData(email) {
     try {
         const response = await fetch(
-            "http://4.240.96.78:5064/api/employee/forgot-password", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ "email": email })
-            }
+            "https://capstone-backend.azurewebsites.net/api/employee/forgot-password", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ "email": email })
+        }
         );
 
         showNotification(
@@ -32,7 +32,7 @@ if (isAuthenticated()) {
 
 const formElement = document.querySelector("form");
 
-formElement.addEventListener("submit", function(event) {
+formElement.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const formData = new FormData(formElement);
